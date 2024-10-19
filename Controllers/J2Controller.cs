@@ -37,7 +37,6 @@ namespace assignment2.Controllers
                 int Habanero = 125000;
                 int total = 0;
                 string[] all_peppers = ingredients.Split(',');
-
                 foreach (string pepper in all_peppers)
                 {
                     string t_pepper = pepper.Trim();
