@@ -75,10 +75,13 @@ namespace assignment2.Controllers
             /// <param name="bids">A list of Bid objects, each containing a name and bid amount.</param>
             /// <returns>An IActionResult containing the name of the highest bidder if bids are provided; otherwise, a bad request message.</returns>
             /// <example>
-            /// If the bids are empty or null, the method will return:
-            /// BadRequest("No bids were provided.")
-            /// If the bids contain valid entries, it will return the name of the highest bidder.
+            /// Example inputs and their outputs:
+            /// bids = [{ "Name": "Alice", "Amount": 100 }, { "Name": "Bob", "Amount": 150 }, { "Name": "Charlie", "Amount": 120 }]  POST /api/J2/auction -> "Bob"
+            /// bids = [{ "Name": "Diana", "Amount": 200 }, { "Name": "Ethan", "Amount": 180 }]  POST /api/J2/auction -> "Diana"
+            /// bids = [{ "Name": "Frank", "Amount": 300 }, { "Name": "Grace", "Amount": 300 }]  POST /api/J2/auction -> "Frank"
+            /// bids = []  POST /api/J2/auction -> BadRequest("No bids were provided.")
             /// </example>
+
 
             if (bids == null || bids.Count == 0)
             {
