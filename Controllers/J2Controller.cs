@@ -60,7 +60,6 @@ namespace assignment2.Controllers
                         total = Habanero + total;
                     }
                 }
-
                 return total;
             }
 
