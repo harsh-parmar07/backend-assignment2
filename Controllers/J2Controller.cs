@@ -64,7 +64,7 @@ namespace assignment2.Controllers
 
 
         [HttpPost("auction")]
-        public IActionResult SilentAuction([FromBody] List<Bid> bids)
+        public string SilentAuction([FromBody] List<Bid> bids)
         {
             /// <summary>
             /// This method processes bids for a silent auction. It accepts a list of bids and determines the highest bid.
@@ -83,7 +83,7 @@ namespace assignment2.Controllers
 
             if (bids == null || bids.Count == 0)
             {
-                return BadRequest("No bids were provided.");
+                return "No bids were provided.";
             }
 
             int maxBid = 0;
@@ -98,7 +98,7 @@ namespace assignment2.Controllers
                 }
             }
 
-            return Ok(winnerName);
+            return winnerName;
         }
 
         public class Bid
